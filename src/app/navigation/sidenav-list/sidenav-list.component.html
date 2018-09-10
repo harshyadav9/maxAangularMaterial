@@ -1,0 +1,8 @@
+<mat-nav-list role="list" fxFlex fxLayout="column" >
+    <a mat-list-item *ngIf="!isSidenavAuth" (click)="onSidenavclose()" routerLink="/signup"><mat-icon>face</mat-icon><span class="navTextStyle">Signup</span></a>
+    <a mat-list-item  *ngIf="isSidenavAuth" (click)="onSidenavclose()"routerLink="/training"><mat-icon>lock</mat-icon><span class="navTextStyle">Training</span></a>
+    <a mat-list-item *ngIf="!isSidenavAuth" (click)="onSidenavclose()"routerLink="/login"><mat-icon>lock</mat-icon><span class="navTextStyle">Login</span></a>
+    <a mat-list-item *ngIf="isSidenavAuth" (click)="onSidenavclose()" routerLink="/"><mat-icon>flip_to_back</mat-icon><span class="navTextStyle">Welcome</span></a>
+    <a mat-list-item *ngIf="isSidenavAuth" (click)="onSidenavclose();authService.logout();" routerLink="/"><mat-icon>lock_open</mat-icon><span class="navTextStyle">Logout</span></a>
+  
+</mat-nav-list>

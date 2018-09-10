@@ -1,0 +1,28 @@
+<div fxFlexLayout fxLayoutAlign="center">
+    <mat-card fxFlex.xs="100%" fxFlex="400px">
+        <form #form ="ngForm"   (ngSubmit)="selectTraining(form)">
+            <mat-card-title  fxLayoutAlign="center">
+            New Training
+            </mat-card-title>
+            <mat-card-content >            
+                <mat-form-field *ngIf="!excercisesSubFlag && trainings"  fxLayoutAlign="center">
+                    <mat-select  [(ngModel)]="selectedTraining" name="selectDrop" placeholder="Select Training" required>
+                        <mat-option *ngFor="let training of trainings"   [value]="training.id">
+                            {{training.name}}                        
+                        </mat-option>                    
+                    </mat-select>
+                </mat-form-field>
+                <mat-progress-spinner  *ngIf="excercisesSubFlag" mode="indeterminate" color="accent"></mat-progress-spinner>
+            </mat-card-content>
+            <mat-card-actions *ngIf="!excercisesSubFlag" fxLayoutAlign="center">
+                <div>
+                    <button type="submit" *ngIf="trainings" [disabled]="!form.valid"  class="mat-raised-button mat-primary"  mat-button >Select</button>
+                    <button type="button" *ngIf="!trainings"   (click)="fetchAgain()" class="mat-raised-button mat-primary"  mat-button >Fetch Aagain</button>
+                </div>                
+            </mat-card-actions>
+            
+        </form>
+      </mat-card>
+      
+
+</div>

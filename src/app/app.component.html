@@ -1,0 +1,16 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <!-- <button mat-raised-button  (click)="sidenav.toggle()" color="accent">Click me</button> -->
+      <app-header  (onSideNavClick) = "sidenav.toggle()"></app-header>
+      <main>
+          <router-outlet></router-outlet>
+          <!-- <mat-progress-bar mode="determinate" value="60"></mat-progress-bar> -->
+         
+      </main>
+      
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>

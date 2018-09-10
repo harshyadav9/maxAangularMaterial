@@ -1,0 +1,11 @@
+a{
+    text-decoration: none; 
+    color:#fff;   
+}
+a:hover,a mat-list-item:hover,a mat-list-item:active,a:active{
+    color: lightgrey;
+}
+
+a mat-list-item{
+    color:blue;
+}

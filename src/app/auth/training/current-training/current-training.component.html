@@ -1,0 +1,6 @@
+<section *ngIf="timerFlag" class="spinnerLayout" fxLayout="column" fxLayoutAlign="center center">
+    <mat-progress-spinner  *ngIf="spinnerProgress > 0" mode="determinate" [value]="spinnerProgress"  color="warn" ></mat-progress-spinner>
+    <h2> Current Training is :  {{currentTraining.name}}</h2>
+    <h2>{{spinnerProgress}}%</h2>
+    <button mat-raised-button color="primary" (click)="stopTimer()">Stop</button>
+</section>
